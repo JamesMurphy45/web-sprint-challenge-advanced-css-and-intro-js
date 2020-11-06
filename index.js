@@ -241,13 +241,13 @@ example born in 1901 and died in 1959 - included / born in 1889 and died in 1925
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
 function get20s(array){
-  let deadArtist = []
+  let deadArtist = [];
   for (let i in array){
     if(array[i].years >= 1900 && array[i].years <= 2000){
-     deadArtist.push(i)(array[i].name);
+     deadArtist.push(array[i].name);
     } 
   }
-  return deadArtist
+  return (deadArtist)
 }
 /* Getting extra "[]" returned - Need to fix*/
 
@@ -262,16 +262,9 @@ Create a function called `removeArtist` that takes two arguments:
  * it will remove Amedeo Modigliani from our dataset and log the number 19.  
 */
 function removeArtist(array, indexNum) {
-delete array[indexNum];
-return array.length;
-//   let removedArtitst = array.slice(indexNum, 1)
-//  return array.length;
+  array.splice(indexNum, 1)
+  return array.length;
 
-  //  let wantRemoved = array.indexOf(indexNum);
-  //  if (wantRemoved > -1) {
-  //    array.splice(wantRemoved, 1);
-console.log(array);
-  
 }
    
 
@@ -290,11 +283,19 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should return the new array with information added"*/
 
-function addArtist(/*Your Code Here*/){
-    /*Your Code Here*/
+function addArtist(newArtist){
+    artists.push(newArtist)
+    return(newArtist)
   }
 
-  
+  addArtist({
+    id: 20,
+    name: "James Murphy", 
+    years: "1990-2020",
+    genre: "Web Design", 
+    nationality: "Irish mutt",
+    bio: "Really want to make a new life for my self. This may be hard now, but I will grow to where i want to be." 
+  })
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Create a function called lotsOfArt() that takes one argument: 
@@ -305,8 +306,14 @@ and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/){
-  /*Your Code Here*/
+function lotsOfArt(array){
+  let oneHundoPlusArray = []
+  for(let i=0; i<array.length; i++){
+    if(array[i].paintings > 100){
+      oneHundoPlusArray.push(array[i].name)
+    }
+  }
+  return oneHundoPlusArray
 }
 
 
